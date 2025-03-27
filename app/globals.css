@@ -120,3 +120,55 @@
     @apply bg-background text-foreground;
   }
 }
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(50px) rotateX(-20deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg) scale(1);
+  }
+}
+
+.animate-fadein-video {
+  animation: fadein auto linear both;
+  animation-timeline: view();
+  animation-range: entry 20% contain 15%;
+}
+
+.animate-fadein-text {
+  animation: fadein auto linear both;
+  animation-timeline: view();
+  animation-range: entry 30% contain 30%;
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(42.4%);
+  }
+  to {
+    transform: translateX(-39%);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(-52%);
+  }
+  to {
+    transform: translateX(41%);
+  }
+}
+
+.animate-slide-right {
+  animation: slide-right auto linear both;
+  animation-timeline: scroll(root);
+  animation-range: entry 10% contain 90%;
+}
+
+.animate-slide-left {
+  animation: slide-left auto linear both;
+  animation-timeline: scroll(root);
+  animation-range: contain;
+}

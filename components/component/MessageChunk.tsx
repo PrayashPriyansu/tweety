@@ -1,4 +1,5 @@
 import { memo, useEffect, useRef, useState } from "react";
+import { motion } from "motion/react";
 
 function MessageChunk({ tweets }: { tweets: string }) {
   const [text, setText] = useState(tweets);
@@ -13,7 +14,8 @@ function MessageChunk({ tweets }: { tweets: string }) {
 
   return (
     <>
-      <textarea
+      <motion.textarea
+        layout
         ref={textareaRef}
         value={text}
         onChange={(e) => setText(e.target.value)}
