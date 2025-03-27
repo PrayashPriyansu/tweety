@@ -1,6 +1,4 @@
 "use client";
-import { useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
 
 function DemoVideo() {
   return (

@@ -1,11 +1,4 @@
-import {
-  BadgeCheck,
-  Bot,
-  CloudLightning,
-  PenLine,
-  Sparkles,
-  Wand,
-} from "lucide-react";
+import { BadgeCheck, Bot, PenLine, Sparkles } from "lucide-react";
 
 export default function Features() {
   const features = [
@@ -40,7 +33,7 @@ export default function Features() {
       <div className="w-full">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
-            Why You'll Love Using Our Platform
+            Why {`You'll`} Love Using Our Platform
           </h2>
           <p className="text-lg text-gray-600 dark:text-gray-400 mt-3">
             More than just tweeting—create, refine, and engage like never

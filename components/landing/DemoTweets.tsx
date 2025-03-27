@@ -1,4 +1,4 @@
-"use client";
+import Tweet from "./Tweet";
 
 const tweets = [
   {
@@ -38,46 +38,29 @@ const tweets = [
   },
 ];
 
-import { motion, useScroll, useTransform } from "motion/react";
-import { useRef } from "react";
-import Tweet from "./Tweet";
-
 function DemoTweets() {
-  const targetRef = useRef<HTMLDivElement | null>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: targetRef,
-  });
-
-  const firstX = useTransform(scrollYProgress, [0, 1], ["24%", "-30%"]);
-  const secondX = useTransform(scrollYProgress, [0, 1], ["-24%", "40%"]);
-  // when scrollYProgress is 0, set the transform to 1%
-
   return (
-    <section
-      ref={targetRef}
-      className="w-full h-[500vh] relative  bg-gray-400 "
-    >
+    <section className="w-full h-[500vh] relative  bg-gray-400 ">
       <div className=" sticky top-0 min-h-screen flex  items-center justify-center gap-4 flex-col  bg-purple-100  overflow-hidden">
         <div className="flex flex-col gap-6">
-          <motion.div className="flex gap-4 animate-slide-left">
+          <div className="flex gap-4 animate-slide-left">
             {tweets.map((tweet, index) => (
               <Tweet
                 tweet={tweet}
-                index={index}
+                key={index}
                 className="bg-slate-900 w-md aspect-video text-white grow dark:bg-gray-800 p-4 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300"
               />
             ))}
-          </motion.div>
-          <motion.div className="flex gap-4 animate-slide-right">
+          </div>
+          <div className="flex gap-4 animate-slide-right">
             {tweets.map((tweet, index) => (
               <Tweet
                 tweet={tweet}
-                index={index + tweets.length}
+                key={index + tweets.length}
                 className="bg-slate-900 w-md aspect-video text-white grow dark:bg-gray-800 p-4 rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all duration-300"
               />
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

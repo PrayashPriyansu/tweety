@@ -1,9 +1,8 @@
-import { motion, MotionValue } from "motion/react";
+import { motion } from "motion/react";
 import { MessageCircle, Heart, Repeat } from "lucide-react";
 
 function Tweet({
   tweet,
-  index,
   className,
 }: {
   tweet: {
@@ -14,11 +13,9 @@ function Tweet({
     text: string;
   };
   className: string;
-  index: number;
 }) {
   return (
     <motion.div
-      key={index}
       className={`bg-slate-900 dark:bg-gray-800 p-4 rounded-xl shadow-md border border-gray-700 hover:shadow-lg flex flex-col transition-all duration-300 aspect-video ${className}  `}
       whileHover={{ scale: 1.02 }}
     >
