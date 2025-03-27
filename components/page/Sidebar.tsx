@@ -5,16 +5,12 @@ import {
   FileText,
   History,
   Settings,
-  CircleChevronRight,
   ChevronsRight,
   Sparkles,
 } from "lucide-react";
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
-import Link from "next/link";
+import { useState } from "react";
 import MenuItem from "../component/MenuItem";
-import { UserButton, useUser } from "@clerk/nextjs";
-import { currentUser } from "@clerk/nextjs/server";
 import UserProfile from "./UserProfile";
 
 const menuItems = [

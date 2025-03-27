@@ -1,4 +1,4 @@
-import { memo, useCallback, useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 
 function MessageChunk({ tweets }: { tweets: string }) {
   const [text, setText] = useState(tweets);

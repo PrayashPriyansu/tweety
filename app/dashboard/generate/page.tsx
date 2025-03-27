@@ -1,30 +1,14 @@
 "use client";
 
-export enum LoadingState {
-  Idle = "idle",
-  GeneratingTopics = "generatingTopics",
-  TopicsReady = "topicsReady",
-  LoadingTweet = "loadingTweet",
-  TweetReady = "tweetReady",
-}
-import {
-  useAssistant,
-  useChat,
-  experimental_useObject as useObject,
-} from "@ai-sdk/react";
-import { useState, useRef, useEffect, use } from "react";
-import { Send, User, Bot, Dot, Ellipsis, Loader2 } from "lucide-react";
+import { experimental_useObject as useObject } from "@ai-sdk/react";
+import { useState, useRef, useEffect } from "react";
 
-import Image from "next/image";
 import MessageRender from "@/components/component/MessageRender";
 import TweetDemo from "@/components/component/TweetDemo";
 import GenerateTweetButton from "@/components/component/GenerateTweetButton";
 import ChatContainer from "@/components/component/ChatContainer";
-import { TextStreamPart } from "ai";
-import { topicSchema } from "../../api/v1/topics/route";
-import { tweetSchema } from "../../api/v1/tweets/route";
-
-const userName = "John Doe";
+import { LoadingState } from "@/lib/types";
+import { topicSchema, tweetSchema } from "@/lib/schema";
 
 export default function Chat() {
   const {
@@ -41,7 +25,7 @@ export default function Chat() {
   const { submit, object } = useObject({
     api: "/api/v1/topics",
     schema: topicSchema,
-    onFinish: (data) => setIsLoading(LoadingState.TopicsReady),
+    onFinish: () => setIsLoading(LoadingState.TopicsReady),
   });
 
   const inputRef = useRef<HTMLInputElement>(null);

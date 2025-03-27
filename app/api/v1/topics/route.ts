@@ -1,14 +1,6 @@
+import { topicSchema } from "@/lib/schema";
 import { google } from "@ai-sdk/google";
 import { streamObject } from "ai";
-import { z } from "zod";
-
-export const topicSchema = z.object({
-  topic: z.array(z.string()).describe("Topics fetched from the database"),
-  ideas: z
-    .array(z.string())
-    .length(4)
-    .describe("An array of 4 tweet ideas based on trending news"),
-});
 
 const dummyTopicsFromDB = [
   "AI",
@@ -34,7 +26,7 @@ Only return the news of the topics that are relevant **right now** based on rece
 `;
 export const maxDuration = 30;
 
-export async function POST(req: Request) {
+export async function POST() {
   try {
     console.log("Fetched topics from DB:", dummyTopicsFromDB);
     const result = streamObject({
@@ -49,8 +41,10 @@ export async function POST(req: Request) {
     console.log("Result:", result);
 
     return result.toTextStreamResponse();
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error:", error);
-    return new Response(error.message || "Unknown error", { status: 500 });
+    if (error instanceof Error) {
+      return new Response(error.message || "Unknown error", { status: 500 });
+    }
   }
 }

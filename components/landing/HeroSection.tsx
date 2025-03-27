@@ -1,12 +1,11 @@
 "use client";
 import { motion } from "motion/react";
 import PillInfo from "./PillInfo";
-import { Dot } from "lucide-react";
 
 export default function Hero() {
   return (
     <section className="relative w-full pt-24 h-screen prose flex flex-col items-center text-center px-6">
-      <PillInfo icon={Dot}>Introducing NeuroSphere AI Platform</PillInfo>
+      <PillInfo>Introducing NeuroSphere AI Platform</PillInfo>
 
       <div className="relative max-w-3xl mx-auto">
         <motion.h1

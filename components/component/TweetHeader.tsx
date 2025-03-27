@@ -1,5 +1,4 @@
 import { Dot, Ellipsis } from "lucide-react";
-import Image from "next/image";
 
 const userName = "John Doe";
 

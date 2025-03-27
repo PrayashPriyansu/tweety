@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Loader2, RefreshCw, Check, Sparkles } from "lucide-react";
+import { Loader2, Check, Sparkles } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
-import { LoadingState } from "@/app/dashboard/generate/page";
+import { LoadingState } from "@/lib/types";
 
 interface GenerateTweetButtonProps {
   onSubmitTopic: () => void;
@@ -19,19 +19,18 @@ export default function GenerateTweetButton({
   onSubmit,
   isLoading,
   topics = [],
-  onRefreshTopics,
 }: GenerateTweetButtonProps) {
   const [selectedTopic, setSelectedTopic] = useState<string | null>(null);
   const [inputValue, setInputValue] = useState<string>("");
 
-  const handleRefreshTopics = () => {
-    setSelectedTopic(null);
-    if (onRefreshTopics) {
-      onRefreshTopics();
-    } else {
-      onSubmitTopic();
-    }
-  };
+  // const handleRefreshTopics = () => {
+  //   setSelectedTopic(null);
+  //   if (onRefreshTopics) {
+  //     onRefreshTopics();
+  //   } else {
+  //     onSubmitTopic();
+  //   }
+  // };
 
   console.log(isLoading);
 

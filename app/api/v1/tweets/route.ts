@@ -1,10 +1,9 @@
+import { tweetSchema } from "@/lib/schema";
 import { google } from "@ai-sdk/google";
 import { generateObject } from "ai";
 import { z } from "zod";
 
 const maxIterations = 5;
-
-export const tweetSchema = z.object({ text: z.string().max(280) });
 
 const brandBrief = `
   ### **📌 Brand Brief**  
@@ -59,7 +58,7 @@ export async function POST(req: Request) {
   try {
     let iterations = 0;
 
-    let firstTweet = await generateObject({
+    const firstTweet = await generateObject({
       model: google("gemini-2.0-flash-001"),
       schema: tweetSchema,
       system: systemPrompt,
@@ -74,7 +73,7 @@ export async function POST(req: Request) {
     console.log("First tweet:", firstTweet.object.text);
 
     while (iterations < maxIterations) {
-      let { object: evaluation } = await generateObject({
+      const { object: evaluation } = await generateObject({
         model: google("gemini-2.0-flash-001"),
         schema: z.object({
           qualityScore: z
@@ -148,7 +147,7 @@ export async function POST(req: Request) {
         break;
       }
 
-      let improvedTweet = await generateObject({
+      const improvedTweet = await generateObject({
         model: google("gemini-2.0-flash-001"),
         schema: tweetSchema,
         system: `You are a social media expert improving tweets.`,
@@ -166,8 +165,10 @@ export async function POST(req: Request) {
     }
 
     return bestTweet.toJsonResponse();
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error:", error);
-    return new Response(error.message || "Unknown error", { status: 500 });
+    if (error instanceof Error) {
+      return new Response(error.message || "Unknown error", { status: 500 });
+    }
   }
 }
