@@ -29,9 +29,9 @@ export default function Features() {
   ];
 
   return (
-    <section className="py-20 w-full mt-[-100vh]  h-screen flex justify-center items-center sticky top-0 bg-gray-50 dark:bg-gray-900">
+    <section className="py-10 w-full  flex justify-center   dark:bg-gray-900 curvy">
       <div className="w-full">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center animate-fadein-text">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
             Why {`You'll`} Love Using Our Platform
           </h2>
@@ -45,11 +45,13 @@ export default function Features() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="p-6 bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 transition-transform hover:scale-[1.05]"
+              className={`p-6 bg-red-50/80 dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 transition-transform hover:scale-[1.05]
+                 ${index % 2 == 0 ? "animate-card-left" : "animate-card-right"} 
+                 `}
             >
               <div className="flex items-center gap-4">
-                <feature.icon />
-                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+                <feature.icon className="text-red-800" />
+                <h3 className="text-xl font-semibold text-red-950 dark:text-white">
                   {feature.title}
                 </h3>
               </div>

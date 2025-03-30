@@ -8,32 +8,35 @@ const links = [
 
 function Header() {
   return (
-    <div className="flex w-full  border-b border-gray-200 h-fit px-4 py-4 items-center">
-      <span className="text-3xl font-bold tracking-wide">Tweety</span>
-      <div className="grow"></div>
-      <div className="hidden md:flex gap-6 items-center">
-        <ul className="flex gap-6 items-center ">
+    <header className=" w-full bg-[#020617] backdrop-blur-lg ">
+      <div className="container mx-auto flex items-center justify-between py-4 px-6">
+        <span className="text-3xl font-bold tracking-wide text-white">
+          Tweety
+        </span>
+
+        <nav className="hidden md:flex gap-6">
           {links.map((link) => (
-            <li key={link.name}>
-              <a href={link.href}>{link.name}</a>
-            </li>
+            <a
+              key={link.name}
+              href={link.href}
+              className="text-gray-300 hover:text-white transition-all duration-300"
+            >
+              {link.name}
+            </a>
           ))}
-        </ul>
-        <div className="grow"></div>
-        <ul className="flex items-center gap-6">
-          <li>
-            <button className=" rounded-lg shadow cursor-pointer py-2 px-4 hover:bg-gray-100 bg-transparent font-semibold">
-              Sign In
-            </button>
-          </li>
-          <li>
-            <button className="bg-black rounded-lg shadow cursor-pointer py-2 px-4 text-white">
-              Get Started
-            </button>
-          </li>
-        </ul>
+        </nav>
+
+        <div className="flex items-center gap-4">
+          <button className="px-4 py-2 text-white bg-transparent border border-gray-400 rounded-lg hover:bg-gray-700 transition">
+            Sign In
+          </button>
+          <button className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 transition">
+            Get Started
+          </button>
+        </div>
       </div>
-    </div>
+    </header>
   );
 }
+
 export default Header;

@@ -2,8 +2,8 @@
 
 function DemoVideo() {
   return (
-    <div className="h-[240vh] relative mt-[-100vh] -z-10">
-      <div className="w-full h-screen sticky top-0 animate-fadein-video animate-fadeout grow flex items-center justify-center">
+    <div className="h-[240vh] relative mt-[-100vh] -z-10 bg-stone-900 overflow-clip">
+      <div className="w-full h-screen sticky top-0 animate-fadein-video animate-fadeout-video animate-fadeout grow flex items-center justify-center">
         <video
           width="90%"
           height="90%"
