@@ -67,7 +67,7 @@ export default function Pricing() {
                 {plan.name}
               </h3>
               <div className="w-full flex flex-col justify-between items-center">
-                <p className="text-4xl font-bold p-4 bg-gray-700 w-fit shadow-2xl rounded-4xl flex items-center justify-center gap-4">
+                <p className="text-2xl sm:text-4xl font-bold p-4 bg-gray-700 w-fit shadow-2xl rounded-2xl flex items-center justify-center gap-4">
                   ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}
                   <span className="text-lg font-normal">
                     {isYearly ? "/ year" : "/ month"}
