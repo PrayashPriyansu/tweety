@@ -1,3 +1,4 @@
+import { LucideIcon } from "lucide-react";
 import Image from "next/image";
 import { useRef } from "react";
 
@@ -6,10 +7,13 @@ function StepCard({
   index,
 }: {
   index: number;
-  step: { title: string; description: string; icon: any; bgColor: string };
+  step: {
+    title: string;
+    description: string;
+    icon: LucideIcon;
+    bgColor: string;
+  };
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-
   return (
     <div
       className={`h-[100dvh] min-w-[75dvw] max-w-[75dvw]  aspect-video top-0 sticky card-step-${index} bg-gradient-to-br from-gray-900 to-gray-950 p-8 rounded-2xl shadow-2xl border border-gray-800 text-white flex flex-col items-start`}
@@ -18,7 +22,6 @@ function StepCard({
         <span className="text-xl font-bold text-white">{index + 1}</span>
       </div>
 
-      {/* Header */}
       <div className="flex items-center space-x-4 mb-6">
         <div
           className="p-4 rounded-xl shadow-lg"
@@ -29,12 +32,10 @@ function StepCard({
         <h3 className="text-3xl font-bold text-white">{step.title}</h3>
       </div>
 
-      {/* Description */}
       <p className="text-lg text-gray-300 leading-relaxed mb-8 ">
         {step.description}
       </p>
 
-      {/* Step Image */}
       <div className="w-full flex-grow rounded-xl overflow-hidden shadow-2xl border border-gray-800 relative">
         <Image
           src={`https://picsum.photos/800/500?random=${index}`}
@@ -43,7 +44,6 @@ function StepCard({
           height={500}
           className="object-cover w-full h-full rounded-xl transition-transform duration-700 hover:scale-105"
         />
-        {/* Subtle overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-30 pointer-events-none"></div>
       </div>
     </div>

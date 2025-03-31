@@ -1,6 +1,5 @@
-import { CheckCircle, FileText, Lightbulb, PenTool, User } from "lucide-react";
-import Image from "next/image";
-import { Fragment } from "react";
+import { CheckCircle, FileText, PenTool, User } from "lucide-react";
+
 import StepCard from "./StepCard";
 
 const steps = [

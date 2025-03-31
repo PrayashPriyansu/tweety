@@ -1,8 +1,5 @@
-import { useState } from "react";
-import { Check, X } from "lucide-react";
 import PlanChoice from "./PlanChoice";
 
-// Feature comparison data
 const features = [
   { name: "Daily Tweet Generations", basic: "5", pro: "Unlimited" },
   { name: "AI Refinement per Tweet", basic: "2", pro: "10" },

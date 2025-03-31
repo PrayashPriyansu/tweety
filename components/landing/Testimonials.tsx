@@ -38,23 +38,23 @@ export default function Testimonials() {
     };
   }, []);
 
-  return (
-    <div className="relative w-full  mx-auto h-screen overflow-hidden py-10">
-      <motion.div
-        initial={{ y: "100%", opacity: 0 }}
-        animate={{ y: "0%", opacity: 1 }}
-        transition={{ duration: 0.6, ease: "easeInOut" }}
-        key={index}
-        className="absolute w-full text-center bg-gray-900 text-white p-6 rounded-xl shadow-xl"
-      >
-        <p className="text-lg font-medium italic">
-          "{testimonials[index].feedback}"
-        </p>
-        <h3 className="mt-4 text-xl font-semibold">
-          - {testimonials[index].name}
-        </h3>
-        <p className="text-sm text-gray-400">{testimonials[index].company}</p>
-      </motion.div>
-    </div>
-  );
+  return null;
 }
+//   <div className="relative w-full  mx-auto h-screen overflow-hidden py-10">
+//     <motion.div
+//       initial={{ y: "100%", opacity: 0 }}
+//       animate={{ y: "0%", opacity: 1 }}
+//       transition={{ duration: 0.6, ease: "easeInOut" }}
+//       key={index}
+//       className="absolute w-full text-center bg-gray-900 text-white p-6 rounded-xl shadow-xl"
+//     >
+//       <p className="text-lg font-medium italic">
+//         "{testimonials[index].feedback}"
+//       </p>
+//       <h3 className="mt-4 text-xl font-semibold">
+//         - {testimonials[index].name}
+//       </h3>
+//       <p className="text-sm text-gray-400">{testimonials[index].company}</p>
+//     </motion.div>
+//   </div>
+// );
