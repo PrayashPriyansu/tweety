@@ -1,55 +1,45 @@
-import { CheckCircle, Lightbulb, PenTool } from "lucide-react";
+import { CheckCircle, FileText, Lightbulb, PenTool, User } from "lucide-react";
+import Image from "next/image";
 import { Fragment } from "react";
+import StepCard from "./StepCard";
 
 const steps = [
   {
-    title: "Create a Topic",
+    title: "Sign Up & Connect",
     description:
-      "Start with a compelling topic that captures your audience's interest and adds value.",
-    icon: Lightbulb,
-    bgColor: "bg-red-500",
+      "Create an account and securely connect your Twitter with a single click. No complex setup required.",
+    icon: User,
+    bgColor: "#4A90E2",
   },
   {
-    title: "Refine & Structure",
+    title: "Define Your Brand",
     description:
-      "Organize your thoughts, outline key points, and ensure clarity in your content.",
+      "Set your tone of voice, define content preferences, and let AI learn your unique Twitter style.",
+    icon: FileText,
+    bgColor: "#F5A623",
+  },
+  {
+    title: "Generate & Refine",
+    description:
+      "AI drafts tweets based on your settings. Edit, tweak, or let the AI refine them to perfection.",
     icon: PenTool,
-    bgColor: "bg-blue-500",
+    bgColor: "#7ED321",
   },
   {
-    title: "Publish & Engage",
+    title: "Schedule & Post",
     description:
-      "Share your content with the world and actively engage with your audience.",
+      "Schedule tweets for the best engagement times or let AI auto-post for consistent activity.",
     icon: CheckCircle,
-    bgColor: "bg-green-500",
+    bgColor: "#D0021B",
   },
 ];
 
 function Steps() {
   return (
-    <div className="relative mt-10">
-      <div className="grid grid-cols-2  items-start ">
-        {/* Step Sections */}
-        {steps.map((step, index) => (
-          <Fragment key={index}>
-            {/* Sticky Sidebar */}
-            <div
-              key={index}
-              className={`sticky top-0 h-screen w-full shadow-2xl  ${step.bgColor} flex flex-col items-center justify-center   shadow-lg`}
-            >
-              <step.icon className="w-12 h-12 text-white mb-4" />
-              <h2 className="text-3xl font-bold text-white">{step.title}</h2>
-            </div>
-
-            {/* Content */}
-            <div className="bg-white dark:bg-gray-800  h-screen  shadow-md flex items-center justify-center">
-              <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
-                {step.description}
-              </p>
-            </div>
-          </Fragment>
-        ))}
-      </div>
+    <div className="relative flex step-conatiner   flex-col gap-40 my-[25dvh] items-center">
+      {steps.map((step, index) => (
+        <StepCard key={index} step={step} index={index} />
+      ))}
     </div>
   );
 }

@@ -41,7 +41,7 @@ const tweets = [
 function DemoTweets() {
   return (
     <section className="w-full h-[500vh] relative  bg-gray-400 ">
-      <div className=" sticky top-0 min-h-screen flex  items-center justify-center gap-4 flex-col  bg-purple-100  overflow-hidden">
+      <div className=" sticky top-0 min-h-screen flex  items-center justify-center gap-4 flex-col  bg-purple-950  overflow-hidden">
         <div className="flex flex-col gap-6">
           <div className="flex gap-4 animate-slide-left">
             {tweets.map((tweet, index) => (

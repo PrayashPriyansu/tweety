@@ -29,13 +29,13 @@ export default function Features() {
   ];
 
   return (
-    <section className="py-10 w-full  flex justify-center   dark:bg-gray-900 curvy">
+    <section className="py-10 w-full   flex justify-center curvy">
       <div className="w-full">
         <div className="max-w-4xl mx-auto text-center animate-fadein-text">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white">
+          <h2 className="text-4xl font-bold text-red-200 dark:text-white">
             Why {`You'll`} Love Using Our Platform
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-400 mt-3">
+          <p className="text-lg text-red-200 dark:text-gray-400 mt-3">
             More than just tweeting—create, refine, and engage like never
             before.
           </p>
