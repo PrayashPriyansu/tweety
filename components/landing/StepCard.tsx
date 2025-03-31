@@ -1,6 +1,5 @@
 import { LucideIcon } from "lucide-react";
 import Image from "next/image";
-import { useRef } from "react";
 
 function StepCard({
   step,
