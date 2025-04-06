@@ -14,27 +14,27 @@ import MenuItem from "../component/MenuItem";
 import UserProfile from "./UserProfile";
 
 const menuItems = [
-  { title: "Home", icon: Home, link: "/" },
+  { title: "Home", icon: Home, link: "/dashboard" },
   {
     title: "Generate",
     icon: Sparkles,
-    link: "/generate",
+    link: "/dashboard/generate",
   },
 
   {
     title: "Context",
     icon: FileText,
-    link: "/context",
+    link: "/dashboard/context",
   },
   {
     title: "History",
     icon: History,
-    link: "/history",
+    link: "/dashboard/history",
   },
   {
     title: "Settings",
     icon: Settings,
-    link: "/settings",
+    link: "/dashboard/settings",
   },
 ];
 
@@ -49,9 +49,6 @@ function Sidebar() {
     >
       <UserProfile isOpen={isOpen} />
 
-      {/* Sidebar Toggle Button */}
-
-      {/* Sidebar Content */}
       <div className="mt-20 flex flex-col gap-10 items-center">
         {menuItems.map((item, index) => (
           <MenuItem isOpen={isOpen} key={index} item={item} />

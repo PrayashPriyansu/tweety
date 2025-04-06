@@ -38,9 +38,11 @@ export default function Accordion() {
   };
 
   return (
-    <div className=" bg-black px-20 w-full pb-[25dvh] space-y-4">
+    <div className=" bg-black px-5 md:px-20 w-full pb-[10dvh] space-y-4">
       <div className="flex w-full justify-between items-center animate-fadein-text">
-        <h2 className="text-3xl font-bold text-white">FAQ</h2>
+        <h2 className="text-3xl w-full font-bold text-center text-white">
+          FAQ
+        </h2>
       </div>
       {accordionData.map((item, index) => (
         <div

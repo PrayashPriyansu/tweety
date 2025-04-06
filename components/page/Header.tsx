@@ -1,3 +1,7 @@
+import { SignInButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
+import Link from "next/link";
+
 const links = [
   { name: "Features", href: "#" },
   { name: "How It Works", href: "#" },
@@ -6,7 +10,9 @@ const links = [
   { name: "FAQ", href: "#" },
 ];
 
-function Header() {
+async function Header() {
+  const { userId } = await auth();
+
   return (
     <header className=" w-full bg-[#020617] backdrop-blur-lg ">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
@@ -27,12 +33,19 @@ function Header() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <button className="px-4 py-2 text-white bg-transparent border border-gray-400 rounded-lg hover:bg-gray-700 transition">
-            Sign In
-          </button>
-          <button className="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600 transition">
-            Get Started
-          </button>
+          {userId ? (
+            <Link href={"/dashboard"}>
+              <button className="px-4 py-2 text-white hover:cursor-pointer bg-purple-500 rounded-2xl hover:bg-purple-600 transition-all duration-300">
+                Dashboard
+              </button>
+            </Link>
+          ) : (
+            <SignInButton withSignUp>
+              <span className="px-4 py-2 text-white bg-purple-500   rounded-2xl hover:bg-purple-600 hover:cursor-pointer  transition-all duration-300">
+                Sign In
+              </span>
+            </SignInButton>
+          )}
         </div>
       </div>
     </header>

@@ -123,6 +123,7 @@
     @apply bg-background text-foreground;
   }
 }
+
 @keyframes fadeinout-video {
   from {
     opacity: 0;
