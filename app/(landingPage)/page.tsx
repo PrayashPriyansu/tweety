@@ -1,13 +1,13 @@
 "use client";
 
-import Accordian from "@/components/landing/Accordian";
-import DemoTweets from "@/components/landing/DemoTweets";
-import DemoVideo from "@/components/landing/DemoVideo";
-import FeaturesSection from "@/components/landing/FeaturesSection";
-import Footer from "@/components/landing/Footer";
-import HeroSection from "@/components/landing/HeroSection";
-import HowItWorks from "@/components/landing/HowItWorks";
-import PricingSection from "@/components/landing/PricingSection";
+import Accordian from "@/app/_components/landing/Accordian";
+import DemoTweets from "@/app/_components/landing/DemoTweets";
+import DemoVideo from "@/app/_components/landing/DemoVideo";
+import FeaturesSection from "@/app/_components/landing/FeaturesSection";
+import Footer from "@/app/_components/landing/Footer";
+import HeroSection from "@/app/_components/landing/HeroSection";
+import HowItWorks from "@/app/_components/landing/HowItWorks";
+import PricingSection from "@/app/_components/landing/PricingSection";
 
 function Home() {
   return (

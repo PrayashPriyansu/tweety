@@ -1,4 +1,4 @@
-import { tweetSchema } from "@/lib/schema";
+import { tweetSchema } from "@/lib/prompts/schema";
 import { google } from "@ai-sdk/google";
 import { generateObject } from "ai";
 import { z } from "zod";

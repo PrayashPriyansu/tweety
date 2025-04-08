@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { motion } from "motion/react";
 import { useState } from "react";
-import MenuItem from "../component/MenuItem";
+import MenuItem from "../generate/MenuItem";
 import UserProfile from "./UserProfile";
 
 const menuItems = [
@@ -43,7 +43,7 @@ function Sidebar() {
 
   return (
     <div
-      className={`min-h-screen relative ml-5 py-7 text-black transition-all duration-500 ease-in-out flex flex-col ${
+      className={`min-h-screen relative ml-5 py-7 text-white transition-all duration-500 ease-in-out flex flex-col ${
         isOpen ? "w-32" : "w-7"
       }`}
     >
@@ -59,10 +59,10 @@ function Sidebar() {
         onClick={() => setIsOpen((prev) => !prev)}
         className=" mt-auto transition-colors duration-200 border-t group border-stone-300"
       >
-        <div className="flex items-center gap-4 transition-colors duration-200 rounded-lg  group-hover:bg-stone-200">
+        <div className="flex items-center gap-4 transition-colors duration-200 py-5 cursor-pointer rounded-lg  group-hover:bg-stone-800">
           <div className="flex  text-lg place-content-center ">
             <ChevronsRight
-              className={`transition-transform duration-200 text-white  sm:text-black ${
+              className={`transition-transform duration-200 text-white   ${
                 isOpen && "rotate-180"
               } size-8 `}
             />
@@ -70,7 +70,7 @@ function Sidebar() {
           {isOpen && (
             <motion.span
               layout
-              className="font-medium text-black text-md "
+              className="font-medium text-white cursor-pointer text-md "
               initial={{ y: -12, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.125 }}

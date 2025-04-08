@@ -1,4 +1,4 @@
-import Header from "@/components/page/Header";
+import Header from "@/app/_components/ui/Header";
 import { ReactElement } from "react";
 
 function layout({ children }: { children: ReactElement | ReactElement[] }) {

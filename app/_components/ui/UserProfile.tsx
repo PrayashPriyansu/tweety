@@ -21,7 +21,7 @@ function UserProfile({ isOpen }: Readonly<{ isOpen: boolean }>) {
       {isOpen && (
         <motion.span
           layout
-          className="font-light text-black text-md "
+          className="font-light text-white text-md "
           initial={{ y: -12, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ delay: 0.125 }}

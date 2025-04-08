@@ -120,7 +120,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-black/90 text-foreground;
   }
 }
 
@@ -351,4 +351,17 @@
   to {
     scale: 1;
   }
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-reveal {
+  animation: reveal 0.5s ease-in-out;
 }

@@ -9,17 +9,17 @@ function MessageRender({
 }>) {
   if (isLoadingTweet === true)
     return (
-      <div className="text-stone-300">
+      <div className="text-gray-400">
         <p>Please wait, generating your tweet...</p>
       </div>
     );
 
   if (!tweets || tweets.length === 0) {
-    return; // Return null if messages is empty or undefined
+    return;
   }
 
   return (
-    <div className="text-stone-100 mt-2">
+    <div className="text-gray-200 mt-2">
       <MessageChunk tweets={tweets} />
     </div>
   );

@@ -1,4 +1,5 @@
-import { topicSchema } from "@/lib/schema";
+import { validUser } from "@/lib/auth/validUser";
+import { topicSchema } from "@/lib/prompts/schema";
 import { google } from "@ai-sdk/google";
 import { streamObject } from "ai";
 
@@ -27,6 +28,8 @@ Only return the news of the topics that are relevant **right now** based on rece
 export const maxDuration = 30;
 
 export async function POST() {
+  await validUser();
+
   try {
     console.log("Fetched topics from DB:", dummyTopicsFromDB);
     const result = streamObject({

@@ -3,12 +3,12 @@
 import { experimental_useObject as useObject } from "@ai-sdk/react";
 import { useState, useRef, useEffect } from "react";
 
-import MessageRender from "@/components/component/MessageRender";
-import TweetDemo from "@/components/component/TweetDemo";
-import GenerateTweetButton from "@/components/component/GenerateTweetButton";
-import ChatContainer from "@/components/component/ChatContainer";
-import { LoadingState } from "@/lib/types";
-import { topicSchema, tweetSchema } from "@/lib/schema";
+import MessageRender from "@/app/_components/generate/MessageRender";
+import TweetDemo from "@/app/_components/generate/TweetDemo";
+import GenerateTweetButton from "@/app/_components/generate/GenerateTweetButton";
+import ChatContainer from "@/app/_components/generate/ChatContainer";
+import { LoadingState } from "@/lib/prompts/types";
+import { topicSchema, tweetSchema } from "@/lib/prompts/schema";
 
 export default function Chat() {
   const {
@@ -51,7 +51,7 @@ export default function Chat() {
   };
 
   return (
-    <div className="grid grid-cols-2 grow px-4 py-4 gap-3 rounded-lg w-full h-full bg-gray-100 dark:bg-gray-900 ">
+    <div className="grid grid-cols-2 grow px-4 py-4 gap-3 rounded-lg w-full h-full bg-gray-950">
       <div>
         <TweetDemo>
           <MessageRender
